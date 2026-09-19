@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior:smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IM Solicitors — Criminal Defence, Civil Liberties &amp; Public Law, London</title>
+<meta name="description" content="Boutique London law firm specialising in criminal defence, civil liberties and public law. 24/7 police station representation.">
+<link rel="icon" type="image/png" href="assets-web/im-logo-original.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#162638;
+  --navy-deep:#0e1a28;
+  --gold:#af915f;
+  --cream:#fce1b6;
+  --paper:#f5f0e8;
+  --ink:#1d222d;
+  --white:#ffffff;
+  --hairline:rgba(252,225,182,.14);
+  --hairline-dark:rgba(29,34,45,.14);
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+::selection{background:rgba(175,145,95,.9);color:#fff}
+html{-webkit-font-smoothing:antialiased}
+body{
+  font-family:'Inter',-apple-system,sans-serif;
+  font-weight:400;
+  background:var(--navy);
+  color:var(--white);
+  overflow-x:hidden;
+}
+.serif{font-family:'Marcellus',serif;font-weight:400}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+
+/* ---------- grain ---------- */
+body::after{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ---------- preloader ---------- */
+#loader{
+  position:fixed;inset:0;z-index:2000;background:var(--navy-deep);
+  display:flex;align-items:center;justify-content:center;flex-direction:column;gap:28px;
+  animation:loaderOut .8s var(--ease) 1.5s forwards;
+}
+@keyframes loaderOut{to{opacity:0;visibility:hidden}}
+#loader .mono{width:clamp(72px,9vw,110px);overflow:hidden}
+#loader .mono img{width:100%;display:block;transform:translateY(110%);animation:rise 1s var(--ease) forwards}
+#loader .bar{width:120px;height:1px;background:var(--hairline);position:relative;overflow:hidden}
+#loader .bar i{position:absolute;inset:0;background:var(--gold);transform:scaleX(0);transform-origin:left;animation:fill 1.1s var(--ease) .2s forwards}
+@keyframes rise{to{transform:translateY(0)}}
+@keyframes fill{to{transform:scaleX(1)}}
+
+/* ---------- nav ---------- */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 clamp(20px,4vw,56px);height:84px;
+  transition:background .5s var(--ease),height .5s var(--ease),border-color .5s;
+  border-bottom:1px solid transparent;
+}
+nav.solid{background:rgba(14,26,40,.92);backdrop-filter:blur(12px);height:68px;border-color:var(--hairline)}
+.brand{display:flex;align-items:center}
+.brand img{height:34px;width:auto;display:block;transition:opacity .3s}
+.brand:hover img{opacity:.85}
+.nav-links{display:flex;gap:clamp(18px,3vw,40px);align-items:center}
+.nav-links a{font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;opacity:.75;transition:opacity .3s,color .3s;position:relative}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:-6px;width:100%;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:right;transition:transform .45s var(--ease)}
+.nav-links a:hover{opacity:1;color:var(--cream)}
+.nav-links a:hover::after{transform:scaleX(1);transform-origin:left}
+.nav-cta{
+  font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;
+  color:var(--navy-deep);background:var(--gold);padding:12px 22px;
+  transition:background .3s,color .3s;
+}
+.nav-links a.nav-cta:hover{
+  background:var(--cream);
+  color:var(--navy-deep);
+  transition:background .3s,color .3s;
+}
+.nav-cta::after{display:none}
+@media(max-width:860px){.nav-links a:not(.nav-cta){display:none}}
+
+/* ---------- hero ---------- */
+.hero{
+  position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:center;
+  padding:140px clamp(20px,6vw,88px) 60px;overflow:hidden;
+}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg img{
+  width:100%;height:100%;object-fit:cover;object-position:center 30%;
+  animation:kenburns 26s var(--ease) 1.2s infinite alternate;
+}
+@keyframes kenburns{from{transform:scale(1)}to{transform:scale(1.09)}}
+.hero-bg::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(100deg,rgba(14,26,40,.93) 0%,rgba(22,38,56,.82) 45%,rgba(14,26,40,.55) 100%);
+}
+.hero>*:not(.hero-bg):not(.badge):not(.vlines){position:relative;z-index:1}
+.vlines{position:absolute;inset:0;pointer-events:none;display:flex;justify-content:space-between;padding:0 clamp(20px,6vw,88px)}
+.vlines i{display:block;width:1px;background:var(--hairline);transform:scaleY(0);transform-origin:top;animation:lineDrop 1.6s var(--ease) 1.5s forwards}
+.vlines i:nth-child(2){animation-delay:1.65s}
+.vlines i:nth-child(3){animation-delay:1.8s}
+.vlines i:nth-child(4){animation-delay:1.95s}
+.vlines i:nth-child(5){animation-delay:2.1s}
+@keyframes lineDrop{to{transform:scaleY(1)}}
+.hero-kicker{
+  font-size:11px;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);font-weight:600;
+  margin-bottom:34px;display:flex;align-items:center;gap:16px;
+}
+.hero-kicker::before{content:"";width:48px;height:1px;background:var(--gold)}
+h1{
+  font-family:'Marcellus',serif;font-weight:400;
+  font-size:clamp(44px,7.4vw,108px);line-height:1.04;letter-spacing:-.01em;
+  max-width:14ch;
+}
+h1 .line{display:block;overflow:hidden}
+h1 .line>span{display:inline-block;transform:translateY(110%);animation:lineUp 1.1s var(--ease) 1.5s forwards}
+h1 .line:nth-child(2)>span{animation-delay:1.6s}
+h1 .line:nth-child(3)>span{animation-delay:1.7s}
+@keyframes lineUp{to{transform:translateY(0)}}
+h1 em{font-style:italic;color:var(--gold)}
+.hero-sub{
+  margin-top:36px;max-width:520px;color:var(--cream);
+  font-size:16px;line-height:1.75;font-weight:300;opacity:.85;
+}
+.hero-actions{margin-top:44px;display:flex;gap:18px;flex-wrap:wrap;align-items:center}
+.btn{
+  display:inline-flex;align-items:center;gap:12px;
+  font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;
+  padding:18px 32px;transition:all .35s var(--ease);
+}
+.btn-gold{background:var(--gold);color:var(--navy-deep)}
+.btn-gold:hover{background:var(--cream);gap:18px}
+.btn-ghost{border:1px solid var(--hairline);color:var(--white)}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+.hero-foot{
+  margin-top:auto;padding-top:70px;display:flex;justify-content:space-between;align-items:flex-end;
+  font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--cream);opacity:.6;
+}
+.scroll-hint{display:flex;flex-direction:column;align-items:center;gap:10px}
+.scroll-hint i{width:1px;height:44px;background:var(--gold);display:block;transform-origin:top;animation:drip 2.2s var(--ease) infinite}
+@keyframes drip{0%{transform:scaleY(0);transform-origin:top}45%{transform:scaleY(1);transform-origin:top}55%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* rotating badge */
+.badge{
+  position:absolute;right:clamp(24px,7vw,110px);top:50%;transform:translateY(-50%);
+  width:clamp(120px,14vw,178px);height:clamp(120px,14vw,178px);z-index:2;
+}
+.badge svg{width:100%;height:100%;overflow:visible}
+.badge .ring{animation:spin 14s linear infinite;transform-origin:50% 50%}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media(max-width:760px){.badge{display:none}}
+
+/* ---------- marquee ---------- */
+.marquee{
+  border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline);
+  overflow:hidden;padding:22px 0;background:var(--navy-deep);
+}
+.marquee-track{display:flex;width:max-content;animation:slide 34s linear infinite}
+.marquee-track span{
+  font-family:'Marcellus',serif;font-size:clamp(18px,2.2vw,26px);letter-spacing:.12em;
+  text-transform:uppercase;white-space:nowrap;padding:0 34px;color:var(--cream);
+  display:flex;align-items:center;gap:68px;
+}
+.marquee-track span::after{content:"";width:7px;height:7px;background:var(--gold);transform:rotate(45deg)}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* ---------- generic section scaffolding ---------- */
+section{position:relative}
+.wrap{max-width:1360px;margin:0 auto;padding:0 clamp(20px,6vw,88px)}
+.split{display:grid;grid-template-columns:repeat(12,1fr);gap:0 clamp(20px,3vw,48px)}
+.label{
+  grid-column:1/4;
+  font-size:11px;letter-spacing:.34em;text-transform:uppercase;font-weight:600;
+  display:flex;gap:14px;align-items:flex-start;padding-top:14px;
+}
+.label::before{content:"";width:34px;height:1px;background:currentColor;margin-top:7px;flex:none}
+.label .sticky{position:sticky;top:120px}
+.body-col{grid-column:4/13}
+@media(max-width:860px){.label{grid-column:1/13;margin-bottom:36px}.body-col{grid-column:1/13}}
+
+/* reveal */
+.js [data-reveal]{opacity:0;transform:translateY(36px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.js [data-reveal].in{opacity:1;transform:none}
+[data-reveal="2"]{transition-delay:.12s}
+[data-reveal="3"]{transition-delay:.24s}
+
+/* ---------- about (light) ---------- */
+.about{background:var(--paper);color:var(--ink);padding:clamp(90px,12vw,170px) 0;overflow:hidden}
+.about .label{color:var(--gold)}
+.about-top{display:grid;grid-template-columns:5fr 7fr;gap:clamp(30px,5vw,80px);align-items:start}
+.about-img{
+  position:relative;margin-left:calc(clamp(20px,6vw,88px) * -1);
+  height:clamp(380px,46vw,640px);overflow:hidden;
+}
+.about-img img{
+  width:100%;height:120%;object-fit:cover;object-position:center 20%;
+  will-change:transform;
+}
+.about-img::after{
+  content:"";position:absolute;inset:0;
+  box-shadow:inset 0 0 0 1px rgba(29,34,45,.08);
+  background:linear-gradient(to top,rgba(14,26,40,.18),transparent 40%);
+}
+.about-img figcaption{
+  position:absolute;bottom:18px;left:22px;z-index:1;
+  font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--cream);font-weight:500;
+}
+.about .statement{
+  font-family:'Marcellus',serif;font-size:clamp(26px,3.2vw,44px);line-height:1.32;letter-spacing:.002em;
+}
+@media(max-width:860px){
+  .about-top{grid-template-columns:1fr}
+  .about-img{margin-left:0;height:60vw}
+}
+.about .statement em{font-style:italic;color:var(--gold)}
+.about .cols{margin-top:clamp(50px,6vw,90px);display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,80px)}
+.about .cols p{font-size:15px;line-height:1.85;font-weight:300;color:rgba(29,34,45,.78)}
+.stats{
+  margin-top:clamp(60px,8vw,110px);display:grid;grid-template-columns:repeat(4,1fr);
+  border-top:1px solid var(--hairline-dark);
+}
+.stat{padding:38px 28px 0 0;border-right:1px solid var(--hairline-dark)}
+.stat:last-child{border-right:none}
+.stat b{font-family:'Marcellus',serif;font-weight:400;font-size:clamp(38px,4.4vw,62px);display:block;color:var(--ink)}
+.stat b sup{color:var(--gold);font-size:.5em}
+.stat span{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:rgba(29,34,45,.55);font-weight:500;display:block;margin-top:12px}
+@media(max-width:860px){.about .cols{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.stat:nth-child(2){border-right:none}}
+
+/* ---------- practice index (dark) ---------- */
+.practice{background:var(--navy);padding:clamp(90px,12vw,170px) 0}
+.practice .label{color:var(--gold)}
+.practice-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:clamp(40px,5vw,70px);gap:30px;flex-wrap:wrap}
+.practice-head h2{font-family:'Marcellus',serif;font-size:clamp(32px,4.4vw,60px);font-weight:400;line-height:1.1}
+.practice-head p{max-width:360px;font-size:14px;line-height:1.8;color:var(--cream);opacity:.7;font-weight:300}
+.pindex{border-top:1px solid var(--hairline)}
+.prow{
+  display:grid;grid-template-columns:90px 1fr 1fr 60px;align-items:center;gap:clamp(16px,3vw,40px);
+  padding:clamp(26px,3.4vw,44px) 8px;border-bottom:1px solid var(--hairline);
+  position:relative;cursor:pointer;transition:padding .45s var(--ease);
+}
+.prow::before{
+  content:"";position:absolute;inset:0;background:rgba(175,145,95,.07);
+  transform:scaleY(0);transform-origin:bottom;transition:transform .45s var(--ease);z-index:0;
+}
+.prow:hover::before{transform:scaleY(1)}
+.prow>*{position:relative;z-index:1}
+.prow .num{font-family:'Marcellus',serif;font-size:15px;color:var(--gold);letter-spacing:.1em}
+.prow h3{font-family:'Marcellus',serif;font-weight:400;font-size:clamp(22px,2.8vw,38px);transition:transform .45s var(--ease),color .3s}
+.prow p{font-size:13.5px;line-height:1.75;color:var(--cream);opacity:.6;font-weight:300;max-width:44ch}
+.prow .arrow{
+  width:44px;height:44px;border:1px solid var(--hairline);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;justify-self:end;
+  transition:all .4s var(--ease);
+}
+.prow .arrow svg{width:16px;height:16px;stroke:var(--cream);transition:transform .4s var(--ease)}
+.prow:hover{padding-left:22px}
+.prow:hover h3{color:var(--gold)}
+.prow:hover .arrow{background:var(--gold);border-color:var(--gold)}
+.prow:hover .arrow svg{stroke:var(--navy-deep);transform:rotate(45deg)}
+@media(max-width:860px){
+  .prow{grid-template-columns:56px 1fr 44px}
+  .prow p{display:none}
+}
+
+/* ---------- courts path (light) ---------- */
+.path{background:var(--paper);color:var(--ink);padding:clamp(90px,12vw,170px) 0}
+.path .label{color:var(--gold)}
+.path h2{font-family:'Marcellus',serif;font-size:clamp(30px,4vw,54px);font-weight:400;line-height:1.15;max-width:20ch;margin-bottom:clamp(50px,6vw,90px)}
+.path h2 em{font-style:italic;color:var(--gold)}
+.stages{position:relative;display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(18px,2.4vw,36px)}
+.stages::before{content:"";position:absolute;top:7px;left:0;right:0;height:1px;background:var(--hairline-dark)}
+.stage{padding-top:38px;position:relative}
+.stage::before{
+  content:"";position:absolute;top:0;left:0;width:15px;height:15px;background:var(--paper);
+  border:1px solid var(--gold);transform:rotate(45deg);transition:background .35s;
+}
+.stage:hover::before{background:var(--gold)}
+.stage b{font-family:'Marcellus',serif;font-weight:400;font-size:clamp(17px,1.5vw,21px);display:block;margin-bottom:12px}
+.stage span{font-size:12.5px;line-height:1.7;color:rgba(29,34,45,.6);font-weight:300;display:block}
+.stage i{font-style:normal;font-size:10px;letter-spacing:.3em;color:var(--gold);font-weight:600;display:block;margin-bottom:14px;text-transform:uppercase}
+@media(max-width:860px){
+  .stages{grid-template-columns:1fr;gap:34px}
+  .stages::before{left:7px;top:0;bottom:0;right:auto;width:1px;height:auto}
+  .stage{padding-top:0;padding-left:38px}
+  .stage::before{top:4px}
+}
+.emergency{
+  margin-top:clamp(70px,9vw,120px);background:var(--navy-deep);color:var(--white);
+  padding:clamp(44px,6vw,80px) clamp(30px,5vw,72px);
+  display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;position:relative;overflow:hidden;
+}
+.emergency::after{content:"";position:absolute;right:-60px;top:-60px;width:240px;height:240px;border:1px solid rgba(175,145,95,.25);border-radius:50%}
+.emergency::before{content:"";position:absolute;right:-20px;top:-20px;width:160px;height:160px;border:1px solid rgba(175,145,95,.18);border-radius:50%}
+.emergency h3{font-family:'Marcellus',serif;font-weight:400;font-size:clamp(24px,3vw,40px);line-height:1.2;margin-bottom:16px}
+.emergency h3 em{font-style:italic;color:var(--gold)}
+.emergency p{font-size:14px;line-height:1.8;color:var(--cream);opacity:.75;max-width:52ch;font-weight:300}
+.emergency .phone{
+  font-family:'Marcellus',serif;font-size:clamp(26px,3vw,44px);color:var(--gold);white-space:nowrap;
+  border-bottom:1px solid var(--gold);padding-bottom:8px;position:relative;z-index:1;
+}
+@media(max-width:860px){.emergency{grid-template-columns:1fr}}
+
+/* ---------- quote ---------- */
+.quote{background:var(--navy-deep);padding:clamp(110px,15vw,200px) 0;text-align:center;position:relative;overflow:hidden}
+.quote-bg{position:absolute;inset:0}
+.quote-bg img{width:100%;height:120%;object-fit:cover;object-position:center 25%;will-change:transform}
+.quote-bg::after{content:"";position:absolute;inset:0;background:rgba(14,26,40,.72)}
+.quote .wrap{position:relative;z-index:1}
+.quote blockquote{
+  font-family:'Marcellus',serif;font-size:clamp(28px,4.6vw,64px);line-height:1.28;
+  max-width:24ch;margin:0 auto;font-weight:400;
+}
+.quote blockquote em{font-style:italic;color:var(--gold)}
+.quote cite{
+  display:block;margin-top:44px;font-style:normal;font-size:11px;letter-spacing:.34em;
+  text-transform:uppercase;color:var(--cream);opacity:.6;font-weight:500;
+}
+.quote .vlines{opacity:.5}
+
+/* ---------- footer ---------- */
+footer{background:var(--navy);border-top:1px solid var(--hairline);padding:clamp(90px,11vw,160px) 0 40px;position:relative;overflow:hidden}
+.foot-bg{position:absolute;inset:0}
+.foot-bg img{width:100%;height:100%;object-fit:cover;object-position:center 35%;opacity:.35}
+.foot-bg::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(to bottom,var(--navy) 0%,rgba(22,38,56,.55) 45%,rgba(14,26,40,.85) 100%);
+}
+footer .wrap{position:relative;z-index:1}
+.foot-brand img{height:38px;width:auto;margin-bottom:22px}
+footer h2{
+  font-family:'Marcellus',serif;font-weight:400;font-size:clamp(38px,6vw,84px);line-height:1.08;max-width:14ch;
+}
+footer h2 em{font-style:italic;color:var(--gold)}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:clamp(30px,4vw,60px);margin-top:clamp(60px,8vw,100px);padding-top:clamp(40px,5vw,60px);border-top:1px solid var(--hairline)}
+.foot-grid h4{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:22px;font-weight:600}
+.foot-grid a,.foot-grid p{display:block;font-size:14px;line-height:2.1;color:var(--cream);opacity:.75;font-weight:300;transition:color .3s,opacity .3s}
+.foot-grid a:hover{color:var(--gold);opacity:1}
+.foot-bottom{
+  margin-top:clamp(50px,7vw,90px);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
+  font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--cream);opacity:.4;font-weight:400;
+}
+@media(max-width:860px){.foot-grid{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+
+<!-- Preloader -->
+<div id="loader">
+  <div class="mono"><img src="assets-web/im-logo-original.png" alt="IM Solicitors"></div>
+  <div class="bar"><i></i></div>
+</div>
+
+<!-- Nav -->
+<nav id="nav">
+  <a class="brand" href="#top"><img src="assets-web/im-logo-original.png" alt="IM Solicitors"></a>
+  <div class="nav-links">
+    <a href="#firm">The Firm</a>
+    <a href="#practice">Practice Areas</a>
+    <a href="#courts">How We Work</a>
+    <a href="#contact">Contact</a>
+    <a class="nav-cta" href="tel:+442070000000">24/7 Emergency</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<header class="hero" id="top">
+  <div class="hero-bg"><img src="assets-web/hero-courts.jpg" alt="The Royal Courts of Justice, London, at dusk"></div>
+  <div class="vlines" id="hero-lines"><i></i><i></i><i></i><i></i><i></i></div>
+
+  <div class="badge" aria-hidden="true">
+    <svg viewBox="0 0 100 100">
+      <g class="ring">
+        <path id="circ" d="M50,50 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1 -76,0" fill="none"/>
+        <text font-size="7.2" letter-spacing="2.4" fill="#af915f" font-family="Inter,sans-serif" font-weight="600">
+          <textPath href="#circ">24/7 POLICE STATION REPRESENTATION • CALL ANYTIME •</textPath>
+        </text>
+      </g>
+      <line x1="50" y1="34" x2="50" y2="66" stroke="#fce1b6" stroke-width="1"/>
+      <line x1="34" y1="50" x2="66" y2="50" stroke="#fce1b6" stroke-width="1"/>
+    </svg>
+  </div>
+
+  <p class="hero-kicker">Boutique Criminal Defence &amp; Public Law — London</p>
+  <h1 id="hero-h1">
+    <span class="line"><span>In your corner</span></span>
+    <span class="line"><span>when it matters</span></span>
+    <span class="line"><span><em>most.</em></span></span>
+  </h1>
+  <p class="hero-sub" data-reveal>IM Solicitors is a boutique London practice defending liberty at every level of the justice system — from the police station interview room to the Supreme Court.</p>
+  <div class="hero-actions" data-reveal="2">
+    <a class="btn btn-gold" href="#contact">Request Representation →</a>
+    <a class="btn btn-ghost" href="#practice">Our Practice Areas</a>
+  </div>
+  <div class="hero-foot">
+    <span>Est. London, England</span>
+    <span class="scroll-hint">Scroll<i></i></span>
+    <span>Defence · Liberties · Public Law</span>
+  </div>
+</header>
+
+<!-- Marquee -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Criminal Defence</span><span>Civil Liberties</span><span>Public Law</span><span>Regulatory Crime</span><span>Inquests</span><span>Prison Law</span>
+    <span>Criminal Defence</span><span>Civil Liberties</span><span>Public Law</span><span>Regulatory Crime</span><span>Inquests</span><span>Prison Law</span>
+  </div>
+</div>
+
+<!-- About -->
+<section class="about" id="firm">
+  <div class="wrap split">
+    <div class="label" data-reveal><span class="sticky">01 — The Firm</span></div>
+    <div class="body-col">
+      <div class="about-top">
+        <figure class="about-img" data-reveal>
+          <img src="assets-web/chambers.jpg" alt="A barrister's chambers at night — briefs, law books and a brass lamp" id="chambers-img">
+          <figcaption>Chambers — London</figcaption>
+        </figure>
+        <p class="statement" data-reveal="2">A small firm by design. <em>Formidable</em> by reputation. We take on the cases that define people's lives — and we do not flinch.</p>
+      </div>
+      <div class="cols">
+        <p data-reveal="2">IM Solicitors was founded on a simple conviction: that every individual — whatever the allegation, whatever the odds — deserves advocacy of the highest calibre. We deliberately remain boutique, so that every client is represented by a senior solicitor who knows their case inside out.</p>
+        <p data-reveal="3">Our practice sits at the intersection of criminal defence, civil liberties and public law. We defend the accused, challenge the state, and hold public authorities to account — in police stations, courtrooms and inquiry halls across England and Wales.</p>
+      </div>
+      <div class="stats">
+        <div class="stat" data-reveal><b>24<sup>/7</sup></b><span>Emergency representation</span></div>
+        <div class="stat" data-reveal="2"><b>5</b><span>Levels of court covered</span></div>
+        <div class="stat" data-reveal="3"><b>6</b><span>Specialist practice areas</span></div>
+        <div class="stat" data-reveal><b>100<sup>%</sup></b><span>Senior-led casework</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Practice areas -->
+<section class="practice" id="practice">
+  <div class="wrap split">
+    <div class="label" data-reveal><span class="sticky">02 — Practice Areas</span></div>
+    <div class="body-col">
+      <div class="practice-head">
+        <h2 data-reveal>What we defend,<br>challenge &amp; protect.</h2>
+        <p data-reveal="2">Six tightly focused practice areas, each handled by solicitors who specialise — and nothing else.</p>
+      </div>
+      <div class="pindex">
+        <a class="prow" href="#contact" data-reveal>
+          <span class="num">/ 01</span>
+          <h3>Criminal Defence</h3>
+          <p>Round-the-clock representation at police stations, Magistrates' Courts, the Crown Court, the Court of Appeal and the Supreme Court.</p>
+          <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></span>
+        </a>
+        <a class="prow" href="#contact" data-reveal>
+          <span class="num">/ 02</span>
+          <h3>Civil Liberties &amp; Human Rights</h3>
+          <p>Discrimination, data protection, asylum, domestic violence and trafficking — safeguarding fundamental rights against powerful interests.</p>
+          <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></span>
+        </a>
+        <a class="prow" href="#contact" data-reveal>
+          <span class="num">/ 03</span>
+          <h3>Public Law &amp; Judicial Review</h3>
+          <p>Challenging unfair or unlawful decisions by government bodies and public authorities through judicial review proceedings.</p>
+          <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></span>
+        </a>
+        <a class="prow" href="#contact" data-reveal>
+          <span class="num">/ 04</span>
+          <h3>Regulatory Crime</h3>
+          <p>Defending individuals and organisations facing regulatory investigations, enforcement action or prosecution.</p>
+          <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></span>
+        </a>
+        <a class="prow" href="#contact" data-reveal>
+          <span class="num">/ 05</span>
+          <h3>Inquests &amp; Public Inquiries</h3>
+          <p>Securing evidence, questioning witnesses and guiding families through formal inquiries into a death or major event.</p>
+          <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></span>
+        </a>
+        <a class="prow" href="#contact" data-reveal>
+          <span class="num">/ 06</span>
+          <h3>Prison Law</h3>
+          <p>Protecting the fundamental rights of people in custody — and standing beside their families throughout.</p>
+          <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Courts path -->
+<section class="path" id="courts">
+  <div class="wrap split">
+    <div class="label" data-reveal><span class="sticky">03 — How We Work</span></div>
+    <div class="body-col">
+      <h2 data-reveal>With you at <em>every stage</em> of the justice system.</h2>
+      <div class="stages">
+        <div class="stage" data-reveal><i>Stage 01</i><b>Police Station</b><span>Immediate advice and representation during interview — the moment cases are won or lost.</span></div>
+        <div class="stage" data-reveal="2"><i>Stage 02</i><b>Magistrates' Court</b><span>First hearings, bail applications and summary trials, handled with precision.</span></div>
+        <div class="stage" data-reveal="3"><i>Stage 03</i><b>Crown Court</b><span>Serious indictable matters, with experienced advocates and instructed counsel.</span></div>
+        <div class="stage" data-reveal="2"><i>Stage 04</i><b>Court of Appeal</b><span>Challenging unsafe convictions and excessive sentences.</span></div>
+        <div class="stage" data-reveal="3"><i>Stage 05</i><b>Supreme Court</b><span>Taking points of principle to the highest court in the land.</span></div>
+      </div>
+      <div class="emergency" data-reveal>
+        <div>
+          <h3>Arrested? Asked to attend <em>a voluntary interview?</em></h3>
+          <p>Say nothing until you have legal advice. Our solicitors answer day and night, 365 days a year — representation at the police station is free, regardless of your means.</p>
+        </div>
+        <a class="phone" href="tel:+442070000000">020 7000 0000</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Quote -->
+<section class="quote">
+  <div class="quote-bg"><img src="assets-web/justice.jpg" alt="Lady Justice holding the scales against a stormy sky" id="justice-img"></div>
+  <div class="wrap">
+    <blockquote data-reveal>"Liberty is not defended in the abstract. It is defended <em>one person, one case,</em> at a time."</blockquote>
+    <cite data-reveal="2">— The founding principle of IM Solicitors</cite>
+  </div>
+</section>
+
+<!-- Footer / contact -->
+<footer id="contact">
+  <div class="foot-bg"><img src="assets-web/london.jpg" alt="The London skyline at dusk across the Thames"></div>
+  <div class="wrap">
+    <div class="label" style="color:var(--gold)" data-reveal><span>04 — Contact</span></div>
+    <h2 data-reveal style="margin-top:40px">Speak to a solicitor <em>today.</em></h2>
+    <div class="hero-actions" data-reveal="2">
+      <a class="btn btn-gold" href="tel:+442070000000">Call 020 7000 0000</a>
+      <a class="btn btn-ghost" href="mailto:enquiries@imsolicitors.com">enquiries@imsolicitors.com</a>
+    </div>
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <img src="assets-web/im-logo-original.png" alt="IM Solicitors">
+        <p>IM Solicitors is a boutique law practice in London specialising in criminal defence, civil liberties and public law. Regulated by the Solicitors Regulation Authority.</p>
+      </div>
+      <div>
+        <h4>Practice</h4>
+        <a href="#practice">Criminal Defence</a>
+        <a href="#practice">Civil Liberties</a>
+        <a href="#practice">Public Law</a>
+        <a href="#practice">Regulatory Crime</a>
+        <a href="#practice">Inquests &amp; Inquiries</a>
+        <a href="#practice">Prison Law</a>
+      </div>
+      <div>
+        <h4>Visit</h4>
+        <p>London, England<br>United Kingdom</p>
+      </div>
+      <div>
+        <h4>Hours</h4>
+        <p>Office: Mon–Fri, 9:00–18:00<br>Emergency line: 24 hours, every day</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 IM Solicitors</span>
+      <span>Authorised &amp; regulated by the SRA</span>
+      <span>Privacy · Terms</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// hero entrance is handled by pure CSS animations (see #loader, .vlines, h1)
+
+// nav solid on scroll
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>nav.classList.toggle('solid',scrollY>60),{passive:true});
+
+// scroll reveals
+document.documentElement.classList.add('js');
+const revealAll=()=>document.querySelectorAll('[data-reveal]').forEach(el=>el.classList.add('in'));
+if('IntersectionObserver' in window){
+  const io=new IntersectionObserver(es=>es.forEach(e=>{
+    if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}
+  }),{threshold:.15});
+  document.querySelectorAll('[data-reveal]').forEach(el=>io.observe(el));
+  // safety net: never leave content invisible
+  setTimeout(revealAll,4000);
+}else{revealAll()}
+
+// subtle parallax: hero text, chambers portrait, justice backdrop
+const heroH1=document.getElementById('hero-h1');
+const heroSub=document.querySelector('.hero-sub');
+const chambersImg=document.getElementById('chambers-img');
+const justiceImg=document.getElementById('justice-img');
+addEventListener('scroll',()=>{
+  const y=scrollY;
+  if(y<innerHeight){
+    heroH1.style.transform=`translateY(${y*.18}px)`;
+    heroSub.style.opacity=Math.max(0,.85-y/600);
+  }
+  [[chambersImg,.08],[justiceImg,.06]].forEach(([img,speed])=>{
+    if(!img) return;
+    const r=img.parentElement.getBoundingClientRect();
+    if(r.bottom>0 && r.top<innerHeight){
+      const p=(r.top+r.height/2-innerHeight/2)*speed;
+      img.style.transform=`translateY(${-p}px)`;
+    }
+  });
+},{passive:true});
+</script>
+</body>
+</html>
