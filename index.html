@@ -275,6 +275,55 @@ section{position:relative}
   .prow p{display:none}
 }
 
+/* ---------- team (dark) ---------- */
+.team{background:var(--charcoal);color:var(--white);padding:clamp(90px,12vw,170px) 0}
+.team .label{color:var(--green)}
+.team-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:clamp(40px,5vw,70px);gap:30px;flex-wrap:wrap}
+.team-head h2{font-family:'Marcellus',serif;font-size:clamp(32px,4.4vw,60px);font-weight:400;line-height:1.1}
+.team-head h2 em{font-style:italic;color:var(--green-soft)}
+.team-head p{max-width:340px;font-size:14px;line-height:1.8;color:var(--grey);font-weight:300}
+.team-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:0;border-top:1px solid var(--hairline);
+}
+.member{
+  padding:clamp(28px,3vw,40px) clamp(16px,2vw,28px) 0 0;
+  border-right:1px solid var(--hairline);
+  display:flex;flex-direction:column;gap:18px;
+}
+.member:last-child{border-right:none;padding-right:0}
+.member-photo{
+  aspect-ratio:3/4;background:linear-gradient(160deg,#3a3d3b 0%,#2a2d2b 55%,#006628 140%);
+  position:relative;overflow:hidden;display:flex;align-items:flex-end;justify-content:flex-start;
+}
+.member-photo span{
+  font-family:'Marcellus',serif;font-size:clamp(42px,4vw,64px);color:rgba(255,255,255,.16);
+  padding:0 0 12px 16px;letter-spacing:.02em;line-height:1;
+}
+.member-photo::after{
+  content:"";position:absolute;inset:0;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.06);
+  background:linear-gradient(to top,rgba(26,29,27,.35),transparent 45%);
+}
+.member .role{
+  font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--green);font-weight:600;
+}
+.member h3{font-family:'Marcellus',serif;font-weight:400;font-size:clamp(20px,1.8vw,26px);line-height:1.2}
+.member .focus{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--grey);font-weight:500}
+.member p{font-size:13.5px;line-height:1.75;color:var(--grey);font-weight:300;padding-bottom:8px}
+@media(max-width:980px){
+  .team-grid{grid-template-columns:repeat(2,1fr)}
+  .member:nth-child(2){border-right:none;padding-right:0}
+  .member:nth-child(3),.member:nth-child(4){border-top:1px solid var(--hairline);padding-top:clamp(28px,3vw,40px)}
+  .member:nth-child(4){border-right:none}
+}
+@media(max-width:560px){
+  .team-grid{grid-template-columns:1fr}
+  .member{border-right:none;padding-right:0;border-bottom:1px solid var(--hairline);padding-bottom:clamp(28px,3vw,40px)}
+  .member:nth-child(3){border-top:none;padding-top:clamp(28px,3vw,40px)}
+  .member:last-child{border-bottom:none}
+}
+
 /* ---------- courts path (light) ---------- */
 .path{background:var(--paper);color:var(--ink);padding:clamp(90px,12vw,170px) 0}
 .path .label{color:var(--green)}
@@ -313,6 +362,42 @@ section{position:relative}
 }
 @media(max-width:860px){.emergency{grid-template-columns:1fr}}
 
+/* ---------- insights / blog (light) ---------- */
+.insights{background:var(--paper);color:var(--ink);padding:clamp(90px,12vw,170px) 0}
+.insights .label{color:var(--green)}
+.insights-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:clamp(40px,5vw,70px);gap:30px;flex-wrap:wrap}
+.insights-head h2{font-family:'Marcellus',serif;font-size:clamp(32px,4.4vw,60px);font-weight:400;line-height:1.1}
+.insights-head h2 em{font-style:italic;color:var(--green)}
+.insights-head p{max-width:340px;font-size:14px;line-height:1.8;color:var(--grey-mid);font-weight:300}
+.posts{border-top:1px solid var(--hairline-dark)}
+.post{
+  display:grid;grid-template-columns:140px 1fr auto;align-items:start;gap:clamp(20px,3vw,48px);
+  padding:clamp(28px,3.4vw,44px) 8px;border-bottom:1px solid var(--hairline-dark);
+  position:relative;transition:padding .45s var(--ease);
+}
+.post::before{
+  content:"";position:absolute;inset:0;background:rgba(0,128,52,.06);
+  transform:scaleY(0);transform-origin:bottom;transition:transform .45s var(--ease);z-index:0;
+}
+.post:hover::before{transform:scaleY(1)}
+.post>*{position:relative;z-index:1}
+.post time{
+  font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--grey);font-weight:500;padding-top:8px;
+}
+.post h3{font-family:'Marcellus',serif;font-weight:400;font-size:clamp(22px,2.6vw,34px);line-height:1.2;margin-bottom:12px;transition:color .3s}
+.post p{font-size:14px;line-height:1.75;color:var(--grey-mid);font-weight:300;max-width:56ch}
+.post .more{
+  font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--green);
+  white-space:nowrap;padding-top:10px;transition:color .3s,gap .35s;display:inline-flex;gap:8px;align-items:center;
+}
+.post:hover{padding-left:18px}
+.post:hover h3{color:var(--green)}
+.post:hover .more{gap:14px;color:var(--green-deep)}
+@media(max-width:860px){
+  .post{grid-template-columns:1fr;gap:12px}
+  .post .more{padding-top:4px}
+}
+
 /* ---------- quote ---------- */
 .quote{background:var(--charcoal-deep);padding:clamp(110px,15vw,200px) 0;text-align:center;position:relative;overflow:hidden}
 .quote-bg{position:absolute;inset:0}
@@ -344,7 +429,7 @@ footer h2{
   font-family:'Marcellus',serif;font-weight:400;font-size:clamp(38px,6vw,84px);line-height:1.08;max-width:14ch;
 }
 footer h2 em{font-style:italic;color:var(--green-soft)}
-.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:clamp(30px,4vw,60px);margin-top:clamp(60px,8vw,100px);padding-top:clamp(40px,5vw,60px);border-top:1px solid var(--hairline)}
+.foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr 1fr;gap:clamp(30px,4vw,60px);margin-top:clamp(60px,8vw,100px);padding-top:clamp(40px,5vw,60px);border-top:1px solid var(--hairline)}
 .foot-grid h4{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--green);margin-bottom:22px;font-weight:600}
 .foot-grid a,.foot-grid p{display:block;font-size:14px;line-height:2.1;color:var(--grey);opacity:1;font-weight:300;transition:color .3s,opacity .3s}
 .foot-grid a:hover{color:var(--green-soft);opacity:1}
@@ -352,7 +437,8 @@ footer h2 em{font-style:italic;color:var(--green-soft)}
   margin-top:clamp(50px,7vw,90px);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
   font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--grey-mid);opacity:1;font-weight:400;
 }
-@media(max-width:860px){.foot-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:980px){.foot-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.foot-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -369,7 +455,8 @@ footer h2 em{font-style:italic;color:var(--green-soft)}
   <div class="nav-links">
     <a href="#firm">The Firm</a>
     <a href="#practice">Practice Areas</a>
-    <a href="#courts">How We Work</a>
+    <a href="#team">Our Team</a>
+    <a href="#insights">Insights</a>
     <a href="#contact">Contact</a>
     <a class="nav-cta" href="tel:+442070000000">24/7 Emergency</a>
   </div>
@@ -520,6 +607,88 @@ footer h2 em{font-style:italic;color:var(--green-soft)}
   </div>
 </section>
 
+<!-- Our Team -->
+<section class="team" id="team">
+  <div class="wrap split">
+    <div class="label" data-reveal><span class="sticky">04 — Our Team</span></div>
+    <div class="body-col">
+      <div class="team-head">
+        <h2 data-reveal>Senior solicitors.<br><em>Every</em> case.</h2>
+        <p data-reveal="2">Placeholder profiles for now — replace with real names, portraits and biographies when ready.</p>
+      </div>
+      <div class="team-grid">
+        <article class="member" data-reveal>
+          <div class="member-photo" aria-hidden="true"><span>AR</span></div>
+          <div class="role">Managing Partner</div>
+          <h3>A. Rahman</h3>
+          <div class="focus">Criminal Defence</div>
+          <p>Placeholder biography. Specialises in serious crime and police station representation across London and the South East.</p>
+        </article>
+        <article class="member" data-reveal="2">
+          <div class="member-photo" aria-hidden="true"><span>SO</span></div>
+          <div class="role">Partner</div>
+          <h3>S. Okonkwo</h3>
+          <div class="focus">Public Law</div>
+          <p>Placeholder biography. Advises on judicial review, human rights challenges and inquiries involving public authorities.</p>
+        </article>
+        <article class="member" data-reveal="3">
+          <div class="member-photo" aria-hidden="true"><span>EW</span></div>
+          <div class="role">Senior Solicitor</div>
+          <h3>E. Whitfield</h3>
+          <div class="focus">Civil Liberties</div>
+          <p>Placeholder biography. Acts in discrimination, data protection and trafficking matters with a focus on vulnerable clients.</p>
+        </article>
+        <article class="member" data-reveal>
+          <div class="member-photo" aria-hidden="true"><span>JP</span></div>
+          <div class="role">Solicitor</div>
+          <h3>J. Patel</h3>
+          <div class="focus">Regulatory &amp; Prison Law</div>
+          <p>Placeholder biography. Defends regulatory prosecutions and protects the rights of people held in custody.</p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Insights / Blog -->
+<section class="insights" id="insights">
+  <div class="wrap split">
+    <div class="label" data-reveal><span class="sticky">05 — Insights</span></div>
+    <div class="body-col">
+      <div class="insights-head">
+        <h2 data-reveal>Clear thinking on<br>the law that <em>matters.</em></h2>
+        <p data-reveal="2">Placeholder articles for the blog. Swap in real posts, dates and links when content is ready.</p>
+      </div>
+      <div class="posts">
+        <a class="post" href="#insights" data-reveal>
+          <time datetime="2026-09-12">12 Sep 2026</time>
+          <div>
+            <h3>Asked to attend a voluntary interview?</h3>
+            <p>Placeholder excerpt. What a voluntary interview really means, why you should not go alone, and how early advice can change the course of a case.</p>
+          </div>
+          <span class="more">Read →</span>
+        </a>
+        <a class="post" href="#insights" data-reveal="2">
+          <time datetime="2026-08-28">28 Aug 2026</time>
+          <div>
+            <h3>When can you challenge a public decision?</h3>
+            <p>Placeholder excerpt. A plain-English guide to judicial review — standing, time limits, and the kinds of decisions that can be brought before the courts.</p>
+          </div>
+          <span class="more">Read →</span>
+        </a>
+        <a class="post" href="#insights" data-reveal="3">
+          <time datetime="2026-08-04">04 Aug 2026</time>
+          <div>
+            <h3>Your rights at the police station</h3>
+            <p>Placeholder excerpt. Free legal advice, the right to silence, and what happens in interview — practical points every detained person should know.</p>
+          </div>
+          <span class="more">Read →</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Quote -->
 <section class="quote">
   <div class="quote-bg"><img src="assets-web/justice.jpg" alt="Lady Justice holding the scales against a stormy sky" id="justice-img"></div>
@@ -533,7 +702,7 @@ footer h2 em{font-style:italic;color:var(--green-soft)}
 <footer id="contact">
   <div class="foot-bg"><img src="assets-web/london.jpg" alt="The London skyline at dusk across the Thames"></div>
   <div class="wrap">
-    <div class="label" style="color:var(--green)" data-reveal><span>04 — Contact</span></div>
+    <div class="label" style="color:var(--green)" data-reveal><span>06 — Contact</span></div>
     <h2 data-reveal style="margin-top:40px">Speak to a solicitor <em>today.</em></h2>
     <div class="hero-actions" data-reveal="2">
       <a class="btn btn-gold" href="tel:+442070000000">Call 020 7000 0000</a>
@@ -552,6 +721,14 @@ footer h2 em{font-style:italic;color:var(--green-soft)}
         <a href="#practice">Regulatory Crime</a>
         <a href="#practice">Inquests &amp; Inquiries</a>
         <a href="#practice">Prison Law</a>
+      </div>
+      <div>
+        <h4>Firm</h4>
+        <a href="#firm">The Firm</a>
+        <a href="#team">Our Team</a>
+        <a href="#insights">Insights</a>
+        <a href="#courts">How We Work</a>
+        <a href="#contact">Contact</a>
       </div>
       <div>
         <h4>Visit</h4>
