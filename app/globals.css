@@ -1,15 +1,3 @@
-<!DOCTYPE html>
-<html lang="en" style="scroll-behavior:smooth">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>IM Solicitors — Criminal Defence, Civil Liberties &amp; Public Law, London</title>
-<meta name="description" content="Boutique London law firm specialising in criminal defence, civil liberties and public law. 24/7 police station representation.">
-<link rel="icon" type="image/png" href="assets-web/im-logo.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-<style>
 :root{
   --ink:#1a1a1a;
   --ink-soft:#2e2e2e;
@@ -29,13 +17,13 @@
 ::selection{background:rgba(0,128,52,.85);color:#fff}
 html{-webkit-font-smoothing:antialiased}
 body{
-  font-family:'Inter',-apple-system,sans-serif;
+  font-family:var(--font-inter),Inter,-apple-system,sans-serif;
   font-weight:400;
   background:var(--white);
   color:var(--ink);
   overflow-x:hidden;
 }
-.serif{font-family:'Marcellus',serif;font-weight:400}
+.serif{font-family:var(--font-marcellus),Marcellus,serif;font-weight:400}
 a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
 
@@ -104,7 +92,7 @@ nav.solid{background:rgba(255,255,255,.94);backdrop-filter:blur(12px);height:76p
 @keyframes kenburns{from{transform:scale(1)}to{transform:scale(1.09)}}
 .hero-bg::after{
   content:"";position:absolute;inset:0;
-  background:linear-gradient(105deg,rgba(255,255,255,.97) 0%,rgba(255,255,255,.9) 42%,rgba(255,255,255,.55) 70%,rgba(255,255,255,.25) 100%);
+  background:linear-gradient(105deg,rgba(255,255,255,.92) 0%,rgba(255,255,255,.78) 38%,rgba(255,255,255,.35) 68%,rgba(255,255,255,.12) 100%);
 }
 .hero>*:not(.hero-bg):not(.badge):not(.vlines){position:relative;z-index:1}
 .vlines{position:absolute;inset:0;pointer-events:none;display:flex;justify-content:space-between;padding:0 clamp(20px,6vw,88px)}
@@ -396,8 +384,8 @@ section{position:relative}
 /* ---------- quote ---------- */
 .quote{background:var(--paper);padding:clamp(110px,15vw,200px) 0;text-align:center;position:relative;overflow:hidden;color:var(--ink)}
 .quote-bg{position:absolute;inset:0}
-.quote-bg img{width:100%;height:120%;object-fit:cover;object-position:center 25%;will-change:transform;opacity:.18}
-.quote-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(245,245,245,.92),rgba(245,245,245,.88))}
+.quote-bg img{width:100%;height:120%;object-fit:cover;object-position:center 25%;will-change:transform;opacity:.55}
+.quote-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(245,245,245,.82),rgba(245,245,245,.72))}
 .quote .wrap{position:relative;z-index:1}
 .quote blockquote{
   font-family:'Marcellus',serif;font-size:clamp(28px,4.6vw,64px);line-height:1.28;
@@ -413,10 +401,10 @@ section{position:relative}
 /* ---------- footer ---------- */
 footer{background:var(--white);border-top:1px solid var(--hairline);padding:clamp(90px,11vw,160px) 0 40px;position:relative;overflow:hidden;color:var(--ink)}
 .foot-bg{position:absolute;inset:0}
-.foot-bg img{width:100%;height:100%;object-fit:cover;object-position:center 35%;opacity:.08}
+.foot-bg img{width:100%;height:100%;object-fit:cover;object-position:center 35%;opacity:.28}
 .foot-bg::after{
   content:"";position:absolute;inset:0;
-  background:linear-gradient(to bottom,var(--white) 0%,rgba(255,255,255,.85) 45%,rgba(255,255,255,.95) 100%);
+  background:linear-gradient(to bottom,rgba(255,255,255,.88) 0%,rgba(255,255,255,.72) 45%,rgba(255,255,255,.9) 100%);
 }
 footer .wrap{position:relative;z-index:1}
 .foot-brand img{height:52px;width:auto;margin-bottom:22px}
@@ -435,353 +423,3 @@ footer h2 em{font-style:italic;color:var(--green)}
 }
 @media(max-width:980px){.foot-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.foot-grid{grid-template-columns:1fr}}
-</style>
-</head>
-<body>
-
-<!-- Preloader -->
-<div id="loader">
-  <div class="mono"><img src="assets-web/im-logo.png" alt="IM Solicitors"></div>
-  <div class="bar"><i></i></div>
-</div>
-
-<!-- Nav -->
-<nav id="nav">
-  <a class="brand" href="#top"><img src="assets-web/im-logo.png" alt="IM Solicitors"></a>
-  <div class="nav-links">
-    <a href="#firm">The Firm</a>
-    <a href="#practice">Practice Areas</a>
-    <a href="#team">Our Team</a>
-    <a href="#insights">Insights</a>
-    <a href="#contact">Contact</a>
-    <a class="nav-cta" href="tel:+442070000000">24/7 Emergency</a>
-  </div>
-</nav>
-
-<!-- Hero -->
-<header class="hero" id="top">
-  <div class="hero-bg"><img src="assets-web/hero-courts.jpg" alt="The Royal Courts of Justice, London, at dusk"></div>
-  <div class="vlines" id="hero-lines"><i></i><i></i><i></i><i></i><i></i></div>
-
-  <div class="badge" aria-hidden="true">
-    <svg viewBox="0 0 100 100">
-      <g class="ring">
-        <path id="circ" d="M50,50 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1 -76,0" fill="none"/>
-        <text font-size="7.2" letter-spacing="2.4" fill="#008034" font-family="Inter,sans-serif" font-weight="600">
-          <textPath href="#circ">24/7 POLICE STATION REPRESENTATION • CALL ANYTIME •</textPath>
-        </text>
-      </g>
-      <line x1="50" y1="34" x2="50" y2="66" stroke="#909090" stroke-width="1"/>
-      <line x1="34" y1="50" x2="66" y2="50" stroke="#909090" stroke-width="1"/>
-    </svg>
-  </div>
-
-  <p class="hero-kicker">Boutique Criminal Defence &amp; Public Law — London</p>
-  <h1 id="hero-h1">
-    <span class="line"><span>In your corner</span></span>
-    <span class="line"><span>when it matters</span></span>
-    <span class="line"><span><em>most.</em></span></span>
-  </h1>
-  <p class="hero-sub" data-reveal>IM Solicitors is a boutique London practice defending liberty at every level of the justice system — from the police station interview room to the Supreme Court.</p>
-  <div class="hero-actions" data-reveal="2">
-    <a class="btn btn-gold" href="#contact">Request Representation →</a>
-    <a class="btn btn-ghost" href="#practice">Our Practice Areas</a>
-  </div>
-  <div class="hero-foot">
-    <span>Est. London, England</span>
-    <span class="scroll-hint">Scroll<i></i></span>
-    <span>Defence · Liberties · Public Law</span>
-  </div>
-</header>
-
-<!-- Marquee -->
-<div class="marquee" aria-hidden="true">
-  <div class="marquee-track">
-    <span>Criminal Defence</span><span>Civil Liberties</span><span>Public Law</span><span>Regulatory Crime</span><span>Inquests</span><span>Prison Law</span>
-    <span>Criminal Defence</span><span>Civil Liberties</span><span>Public Law</span><span>Regulatory Crime</span><span>Inquests</span><span>Prison Law</span>
-  </div>
-</div>
-
-<!-- About -->
-<section class="about" id="firm">
-  <div class="wrap split">
-    <div class="label" data-reveal><span class="sticky">01 — The Firm</span></div>
-    <div class="body-col">
-      <div class="about-top">
-        <figure class="about-img" data-reveal>
-          <img src="assets-web/chambers.jpg" alt="A barrister's chambers at night — briefs, law books and a brass lamp" id="chambers-img">
-          <figcaption>Chambers — London</figcaption>
-        </figure>
-        <p class="statement" data-reveal="2">A small firm by design. <em>Formidable</em> by reputation. We take on the cases that define people's lives — and we do not flinch.</p>
-      </div>
-      <div class="cols">
-        <p data-reveal="2">IM Solicitors was founded on a simple conviction: that every individual — whatever the allegation, whatever the odds — deserves advocacy of the highest calibre. We deliberately remain boutique, so that every client is represented by a senior solicitor who knows their case inside out.</p>
-        <p data-reveal="3">Our practice sits at the intersection of criminal defence, civil liberties and public law. We defend the accused, challenge the state, and hold public authorities to account — in police stations, courtrooms and inquiry halls across England and Wales.</p>
-      </div>
-      <div class="stats">
-        <div class="stat" data-reveal><b>24<sup>/7</sup></b><span>Emergency representation</span></div>
-        <div class="stat" data-reveal="2"><b>5</b><span>Levels of court covered</span></div>
-        <div class="stat" data-reveal="3"><b>6</b><span>Specialist practice areas</span></div>
-        <div class="stat" data-reveal><b>100<sup>%</sup></b><span>Senior-led casework</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Practice areas -->
-<section class="practice" id="practice">
-  <div class="wrap split">
-    <div class="label" data-reveal><span class="sticky">02 — Practice Areas</span></div>
-    <div class="body-col">
-      <div class="practice-head">
-        <h2 data-reveal>What we defend,<br>challenge &amp; protect.</h2>
-        <p data-reveal="2">Six tightly focused practice areas, each handled by solicitors who specialise — and nothing else.</p>
-      </div>
-      <div class="pindex">
-        <a class="prow" href="#contact" data-reveal>
-          <span class="num">/ 01</span>
-          <h3>Criminal Defence</h3>
-          <p>Round-the-clock representation at police stations, Magistrates' Courts, the Crown Court, the Court of Appeal and the Supreme Court.</p>
-          <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></span>
-        </a>
-        <a class="prow" href="#contact" data-reveal>
-          <span class="num">/ 02</span>
-          <h3>Civil Liberties &amp; Human Rights</h3>
-          <p>Discrimination, data protection, asylum, domestic violence and trafficking — safeguarding fundamental rights against powerful interests.</p>
-          <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></span>
-        </a>
-        <a class="prow" href="#contact" data-reveal>
-          <span class="num">/ 03</span>
-          <h3>Public Law &amp; Judicial Review</h3>
-          <p>Challenging unfair or unlawful decisions by government bodies and public authorities through judicial review proceedings.</p>
-          <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></span>
-        </a>
-        <a class="prow" href="#contact" data-reveal>
-          <span class="num">/ 04</span>
-          <h3>Regulatory Crime</h3>
-          <p>Defending individuals and organisations facing regulatory investigations, enforcement action or prosecution.</p>
-          <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></span>
-        </a>
-        <a class="prow" href="#contact" data-reveal>
-          <span class="num">/ 05</span>
-          <h3>Inquests &amp; Public Inquiries</h3>
-          <p>Securing evidence, questioning witnesses and guiding families through formal inquiries into a death or major event.</p>
-          <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></span>
-        </a>
-        <a class="prow" href="#contact" data-reveal>
-          <span class="num">/ 06</span>
-          <h3>Prison Law</h3>
-          <p>Protecting the fundamental rights of people in custody — and standing beside their families throughout.</p>
-          <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></span>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Courts path -->
-<section class="path" id="courts">
-  <div class="wrap split">
-    <div class="label" data-reveal><span class="sticky">03 — How We Work</span></div>
-    <div class="body-col">
-      <h2 data-reveal>With you at <em>every stage</em> of the justice system.</h2>
-      <div class="stages">
-        <div class="stage" data-reveal><i>Stage 01</i><b>Police Station</b><span>Immediate advice and representation during interview — the moment cases are won or lost.</span></div>
-        <div class="stage" data-reveal="2"><i>Stage 02</i><b>Magistrates' Court</b><span>First hearings, bail applications and summary trials, handled with precision.</span></div>
-        <div class="stage" data-reveal="3"><i>Stage 03</i><b>Crown Court</b><span>Serious indictable matters, with experienced advocates and instructed counsel.</span></div>
-        <div class="stage" data-reveal="2"><i>Stage 04</i><b>Court of Appeal</b><span>Challenging unsafe convictions and excessive sentences.</span></div>
-        <div class="stage" data-reveal="3"><i>Stage 05</i><b>Supreme Court</b><span>Taking points of principle to the highest court in the land.</span></div>
-      </div>
-      <div class="emergency" data-reveal>
-        <div>
-          <h3>Arrested? Asked to attend <em>a voluntary interview?</em></h3>
-          <p>Say nothing until you have legal advice. Our solicitors answer day and night, 365 days a year — representation at the police station is free, regardless of your means.</p>
-        </div>
-        <a class="phone" href="tel:+442070000000">020 7000 0000</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Our Team -->
-<section class="team" id="team">
-  <div class="wrap split">
-    <div class="label" data-reveal><span class="sticky">04 — Our Team</span></div>
-    <div class="body-col">
-      <div class="team-head">
-        <h2 data-reveal>Senior solicitors.<br><em>Every</em> case.</h2>
-        <p data-reveal="2">Placeholder profiles for now — replace with real names, portraits and biographies when ready.</p>
-      </div>
-    </div>
-    <div class="team-grid">
-      <article class="member" data-reveal>
-        <div class="member-photo" aria-hidden="true"><span>AR</span></div>
-        <div class="role">Managing Partner</div>
-        <h3>A. Rahman</h3>
-        <div class="focus">Criminal Defence</div>
-        <p>Placeholder biography. Specialises in serious crime and police station representation across London and the South East.</p>
-      </article>
-      <article class="member" data-reveal="2">
-        <div class="member-photo" aria-hidden="true"><span>SO</span></div>
-        <div class="role">Partner</div>
-        <h3>S. Okonkwo</h3>
-        <div class="focus">Public Law</div>
-        <p>Placeholder biography. Advises on judicial review, human rights challenges and inquiries involving public authorities.</p>
-      </article>
-      <article class="member" data-reveal="3">
-        <div class="member-photo" aria-hidden="true"><span>EW</span></div>
-        <div class="role">Senior Solicitor</div>
-        <h3>E. Whitfield</h3>
-        <div class="focus">Civil Liberties</div>
-        <p>Placeholder biography. Acts in discrimination, data protection and trafficking matters with a focus on vulnerable clients.</p>
-      </article>
-      <article class="member" data-reveal>
-        <div class="member-photo" aria-hidden="true"><span>JP</span></div>
-        <div class="role">Solicitor</div>
-        <h3>J. Patel</h3>
-        <div class="focus">Regulatory &amp; Prison Law</div>
-        <p>Placeholder biography. Defends regulatory prosecutions and protects the rights of people held in custody.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- Insights / Blog -->
-<section class="insights" id="insights">
-  <div class="wrap split">
-    <div class="label" data-reveal><span class="sticky">05 — Insights</span></div>
-    <div class="body-col">
-      <div class="insights-head">
-        <h2 data-reveal>Clear thinking on<br>the law that <em>matters.</em></h2>
-        <p data-reveal="2">Placeholder articles for the blog. Swap in real posts, dates and links when content is ready.</p>
-      </div>
-      <div class="posts">
-        <a class="post" href="#insights" data-reveal>
-          <time datetime="2026-09-12">12 Sep 2026</time>
-          <div>
-            <h3>Asked to attend a voluntary interview?</h3>
-            <p>Placeholder excerpt. What a voluntary interview really means, why you should not go alone, and how early advice can change the course of a case.</p>
-          </div>
-          <span class="more">Read →</span>
-        </a>
-        <a class="post" href="#insights" data-reveal="2">
-          <time datetime="2026-08-28">28 Aug 2026</time>
-          <div>
-            <h3>When can you challenge a public decision?</h3>
-            <p>Placeholder excerpt. A plain-English guide to judicial review — standing, time limits, and the kinds of decisions that can be brought before the courts.</p>
-          </div>
-          <span class="more">Read →</span>
-        </a>
-        <a class="post" href="#insights" data-reveal="3">
-          <time datetime="2026-08-04">04 Aug 2026</time>
-          <div>
-            <h3>Your rights at the police station</h3>
-            <p>Placeholder excerpt. Free legal advice, the right to silence, and what happens in interview — practical points every detained person should know.</p>
-          </div>
-          <span class="more">Read →</span>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Quote -->
-<section class="quote">
-  <div class="quote-bg"><img src="assets-web/justice.jpg" alt="Lady Justice holding the scales against a stormy sky" id="justice-img"></div>
-  <div class="wrap">
-    <blockquote data-reveal>"Liberty is not defended in the abstract. It is defended <em>one person, one case,</em> at a time."</blockquote>
-    <cite data-reveal="2">— The founding principle of IM Solicitors</cite>
-  </div>
-</section>
-
-<!-- Footer / contact -->
-<footer id="contact">
-  <div class="foot-bg"><img src="assets-web/london.jpg" alt="The London skyline at dusk across the Thames"></div>
-  <div class="wrap">
-    <div class="label" style="color:var(--green)" data-reveal><span>06 — Contact</span></div>
-    <h2 data-reveal style="margin-top:40px">Speak to a solicitor <em>today.</em></h2>
-    <div class="hero-actions" data-reveal="2">
-      <a class="btn btn-gold" href="tel:+442070000000">Call 020 7000 0000</a>
-      <a class="btn btn-ghost" href="mailto:enquiries@imsolicitors.com">enquiries@imsolicitors.com</a>
-    </div>
-    <div class="foot-grid">
-      <div class="foot-brand">
-        <img src="assets-web/im-logo.png" alt="IM Solicitors">
-        <p>IM Solicitors is a boutique law practice in London specialising in criminal defence, civil liberties and public law. Regulated by the Solicitors Regulation Authority.</p>
-      </div>
-      <div>
-        <h4>Practice</h4>
-        <a href="#practice">Criminal Defence</a>
-        <a href="#practice">Civil Liberties</a>
-        <a href="#practice">Public Law</a>
-        <a href="#practice">Regulatory Crime</a>
-        <a href="#practice">Inquests &amp; Inquiries</a>
-        <a href="#practice">Prison Law</a>
-      </div>
-      <div>
-        <h4>Firm</h4>
-        <a href="#firm">The Firm</a>
-        <a href="#team">Our Team</a>
-        <a href="#insights">Insights</a>
-        <a href="#courts">How We Work</a>
-        <a href="#contact">Contact</a>
-      </div>
-      <div>
-        <h4>Visit</h4>
-        <p>London, England<br>United Kingdom</p>
-      </div>
-      <div>
-        <h4>Hours</h4>
-        <p>Office: Mon–Fri, 9:00–18:00<br>Emergency line: 24 hours, every day</p>
-      </div>
-    </div>
-    <div class="foot-bottom">
-      <span>© 2026 IM Solicitors</span>
-      <span>Authorised &amp; regulated by the SRA</span>
-      <span>Privacy · Terms</span>
-    </div>
-  </div>
-</footer>
-
-<script>
-// hero entrance is handled by pure CSS animations (see #loader, .vlines, h1)
-
-// nav solid on scroll
-const nav=document.getElementById('nav');
-addEventListener('scroll',()=>nav.classList.toggle('solid',scrollY>60),{passive:true});
-
-// scroll reveals
-document.documentElement.classList.add('js');
-const revealAll=()=>document.querySelectorAll('[data-reveal]').forEach(el=>el.classList.add('in'));
-if('IntersectionObserver' in window){
-  const io=new IntersectionObserver(es=>es.forEach(e=>{
-    if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}
-  }),{threshold:.15});
-  document.querySelectorAll('[data-reveal]').forEach(el=>io.observe(el));
-  // safety net: never leave content invisible
-  setTimeout(revealAll,4000);
-}else{revealAll()}
-
-// subtle parallax: hero text, chambers portrait, justice backdrop
-const heroH1=document.getElementById('hero-h1');
-const heroSub=document.querySelector('.hero-sub');
-const chambersImg=document.getElementById('chambers-img');
-const justiceImg=document.getElementById('justice-img');
-addEventListener('scroll',()=>{
-  const y=scrollY;
-  if(y<innerHeight){
-    heroH1.style.transform=`translateY(${y*.18}px)`;
-    heroSub.style.opacity=Math.max(0,1-y/600);
-  }
-  [[chambersImg,.08],[justiceImg,.06]].forEach(([img,speed])=>{
-    if(!img) return;
-    const r=img.parentElement.getBoundingClientRect();
-    if(r.bottom>0 && r.top<innerHeight){
-      const p=(r.top+r.height/2-innerHeight/2)*speed;
-      img.style.transform=`translateY(${-p}px)`;
-    }
-  });
-},{passive:true});
-</script>
-</body>
-</html>
